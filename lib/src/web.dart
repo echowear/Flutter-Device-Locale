@@ -1,5 +1,4 @@
 import 'dart:async';
-
 // TODO
 // Since Flutter Web is currently not available in the stable branch, the
 // Travis Build Job fails. Therefore we ignore the error until Flutter Web
@@ -20,7 +19,7 @@ class FlutterDeviceLocaleWebPlugin extends FlutterDeviceLocalePlatform {
   Future<List<String>> deviceLocales() async {
     // I don't know why, but if we don't create a copy, this future never completes.
     List<String> result = [];
-    html.window.navigator.languages.forEach(result.add);
+    html.window.navigator.languages?.forEach(result.add);
 
     return result;
   }
